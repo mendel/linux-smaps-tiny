@@ -79,4 +79,5 @@ PPCODE:
     (void)hv_store(hash, "Size",           strlen("Size"),           newSViv(sizes.Size),           0);
     (void)hv_store(hash, "Swap",           strlen("Swap"),           newSViv(sizes.Swap),           0);
 
+    sv_2mortal((SV*) hash);
     XPUSHs(newRV_noinc((SV*) hash));
